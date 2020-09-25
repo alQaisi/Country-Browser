@@ -9,7 +9,7 @@ const CountriesContainer=({data,colorMode,onCountryClick})=>{
         )
     });
     return(
-        <div className={"CountriesContainer"}>
+        <div className={"CountriesContainer"} id={"CountriesContainer"}>
             {countries}
         </div>
     )

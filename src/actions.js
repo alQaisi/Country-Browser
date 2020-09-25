@@ -24,9 +24,10 @@ export const onChange=(text)=>({
     payload:text
 })
 export const onBackClick=()=>{
-    window.focus();
     if (document.activeElement) {
       document.activeElement.blur();
+      const CountriesContainer=document.getElementById("CountriesContainer");
+      CountriesContainer.focus();
       document.body.style.overflowY="auto";
     }
     return{
