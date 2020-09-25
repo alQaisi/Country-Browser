@@ -24,6 +24,11 @@ export const onChange=(text)=>({
     payload:text
 })
 export const onBackClick=()=>{
+    window.focus();
+    if (document.activeElement) {
+      document.activeElement.blur();
+      document.body.style.overflowY="auto";
+    }
     return{
     type:actionsTypes.CLICK_BACK,
     payload:"slide-out"
