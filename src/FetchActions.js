@@ -9,6 +9,7 @@ export const fetchCountries=()=>(dispatch)=>{
 };
 export const onCountryClick=(alpha2Code,position)=>(dispatch)=>{
     if(position==='out'){
+        document.body.style.overflowY="scroll";
         dispatch({
             type:actionsTypes.FETCH_COUNTRY,
             payload:{inPage:false,currentCountry:{}}
