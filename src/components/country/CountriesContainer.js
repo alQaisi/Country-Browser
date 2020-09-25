@@ -9,7 +9,7 @@ const CountriesContainer=({data,colorMode,onCountryClick})=>{
         )
     });
     return(
-        <div className={"CountriesContainer"}>
+        <div onMouseEnter={()=>{document.body.style.overflowY="scroll";}} className={"CountriesContainer"}>
             {countries}
         </div>
     )
