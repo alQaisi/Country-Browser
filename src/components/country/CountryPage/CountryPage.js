@@ -12,7 +12,7 @@ const CountryPage=({slideMethod,onBackClick,colorMode,currentCountry,borders,onC
         show===true?document.body.style.overflowY="scroll":document.body.style.overflowY="hidden";
     }
     return(
-        <div onMouseOver={controlScroll}  onMouseOut={controlScroll.bind(this,true)} className={" CountryPage "+ colorMode+"-CountryPage "+ slideMethod}>
+        <div onMouseOver={controlScroll} onScroll={controlScroll}  onMouseOut={controlScroll.bind(this,true)} className={" CountryPage "+ colorMode+"-CountryPage "+ slideMethod}>
             <div className={"button-container "+colorMode+"-button-container"} onClick={onBackClick}>
               <BsArrowLeft className="back-icon"/>
               <button className="back-button">Back</button>
