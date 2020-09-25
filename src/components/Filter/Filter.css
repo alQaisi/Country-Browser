@@ -1,0 +1,130 @@
+.searchBar input{
+    background:transparent;
+    outline:none;
+    border:none;
+    font-size:1rem;
+    position: relative;
+    bottom:15px;
+    width:600px;
+    color:hsl(200, 15%, 8%);
+}
+.searchBar{
+    border-radius:8px;
+    width:auto;
+    margin-left:50px;
+    padding: 10px 25px;
+    -webkit-box-shadow: 1px 1px 7px 2px rgba(214,214,214,1);
+    -moz-box-shadow: 1px 1px 7px 2px rgba(214,214,214,1);
+    box-shadow: 1px 1px 7px 2px rgba(214,214,214,1);
+    height:35px;
+}
+.searchIcon{
+    color:lightslategray;
+    font-size:25px;
+    margin:7px;
+    position: relative;
+    cursor: pointer;
+}
+.selectRegion{
+    border-radius:8px;
+    margin-right:50px;
+    -webkit-box-shadow: 1px 1px 7px 2px rgba(214,214,214,1);
+    -moz-box-shadow: 1px 1px 7px 2px rgba(214,214,214,1);
+    box-shadow: 1px 1px 7px 2px rgba(214,214,214,1);
+}
+select{
+    cursor:pointer;
+    outline:none;
+    border:none;
+    border-radius:8px;
+    min-width:195px;
+    padding-left:15px;
+    padding-right:20px;
+    background:transparent;
+    font-family: 'Nunito Sans', sans-serif;
+    bottom:-15px;
+    font-size:1rem;
+    height:auto;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.FilterContainer{
+    display:flex;
+    justify-content:space-between;
+    margin-top:60px;
+}
+.dark-searchBar,.dark-selectRegion,.dark-searchBar input,.dark-searchIcon{
+    background:#2b3743;
+    color:hsl(0, 0%, 100%);
+    box-shadow: none;    
+}
+.dark-searchBar input::placeholder{
+    color:rgb(160, 163, 167);
+}
+
+@media screen and (max-width:1075px){
+    .FilterContainer{
+        margin-top:20px;
+        margin-bottom:5px;
+    }
+    .searchBar input{
+        width:450px;
+    }
+    .searchBar{
+        margin-left:25px;
+    }
+    .selectRegion{
+        margin-right:25px;
+        min-width:175px;
+    }
+}
+@media screen and (max-width:800px){
+    .searchBar input{
+        width:300px;
+        bottom:20px;
+    }
+    .searchIcon{
+        bottom:5px;
+    }
+    .searchBar{
+        height:25px;
+    }
+}
+@media screen and (max-width:650px){
+    .FilterContainer{
+        flex-direction: column;
+    }
+    .searchBar{
+        margin:0 15px;
+        padding:0;
+        padding-bottom:12px;
+    }
+    .searchBar input{
+        font-size:.85rem;
+        width:415px;
+        bottom:15px;
+    }
+    .searchIcon{
+        bottom:0px;
+    }
+    .selectRegion{
+        margin:25px 25px 0 15px;
+        height:35px;
+    }
+    select{
+        max-width:75px;
+        height:35px;
+        font-size:.8rem;
+    }
+}
+@media screen and (max-width:490px){
+    .searchBar input{
+        width:250px;
+    }
+}
+@media screen and (max-width:320px){
+    .searchBar input{
+        width:200px;
+    }
+}

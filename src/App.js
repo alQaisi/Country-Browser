@@ -1,0 +1,66 @@
+import React,{Component, Suspense} from 'react';
+import './App.css';
+import Header from './components/Header/Header';
+import Filter from './components/Filter/Filter';
+// import CountriesContainer from './components/country/CountriesContainer';
+import {setSearchBox,darkModeEvent,onChange,onBackClick} from './actions';
+import {fetchCountries,onCountryClick} from './FetchActions';
+import {connect} from 'react-redux';
+const CountriesContainer=React.lazy(()=>import('./components/country/CountriesContainer'));
+const CountryPage=React.lazy(()=>import('./components/country/CountryPage/CountryPage'));
+const mapStateToProps=state=>{
+  return{
+    nameFilter:state.uiReducer.nameFilter,
+    colorMode:state.uiReducer.colorMode,
+    selectValue:state.uiReducer.selectValue,
+    slideMethod:state.dataReducer.slideMethod,
+    data:state.dataReducer.data,
+    currentCountry:state.dataReducer.currentCountry,
+    inPage:state.dataReducer.inPage,
+    borders:state.dataReducer.borders
+  }
+}
+const mapDispatchToProps=(dispatch)=>{
+  return {
+    onInputChange:(event)=>dispatch(setSearchBox(event.target.value)),
+    darkModeEvent:()=>dispatch(darkModeEvent()),
+    onChange:(event)=>dispatch(onChange(event.target.value)),
+    onBackClick:()=>dispatch(onBackClick()),
+    fetchCountries:()=>dispatch(fetchCountries()),
+    onCountryClick:(alpha2Code,position)=>dispatch(onCountryClick(alpha2Code,position))
+  }
+}
+class App extends Component{
+  componentDidMount(){
+    this.props.fetchCountries();
+  }
+  render(){
+    const {nameFilter,onInputChange,colorMode,darkModeEvent,selectValue,onChange,slideMethod,onBackClick,data,borders,inPage,currentCountry,onCountryClick}=this.props;
+    let filterdCountries=data.filter(country=>{
+      if(selectValue==="1"){
+        return (country.name.toLowerCase().includes(nameFilter.toLowerCase()));
+      }else{
+        return (country.name.toLowerCase().includes(nameFilter.toLowerCase()) && country.region===selectValue);
+      }
+    })
+    return (
+      <div className={"App " +colorMode+"-App"}>
+        <Header colorMode={colorMode} darkModeEvent={darkModeEvent}/>
+        <Filter colorMode={colorMode} onInputChange={onInputChange} selectValue={selectValue} onChange={onChange}/>
+        <Suspense fallback={<h1>Loading Countries</h1>}>
+        <CountriesContainer data={filterdCountries} colorMode={colorMode} onCountryClick={onCountryClick} allCountries={data}/>
+        </Suspense>
+          
+        {inPage===true
+          ?(
+            <Suspense fallback={<>Loading...</>}>
+              <CountryPage slideMethod={slideMethod} onCountryClick={onCountryClick} borders={borders} onBackClick={onBackClick} colorMode={colorMode} currentCountry={currentCountry}/>
+            </Suspense>
+          )
+        :null
+        }
+      </div>
+    );
+  } 
+}
+export default connect(mapStateToProps,mapDispatchToProps)(App);
