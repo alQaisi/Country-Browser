@@ -3,7 +3,6 @@ import './country.css';
 class Country extends PureComponent{
     render(){
         const {flag,name,population,region,capital,colorMode,onCountryClick,alpha2Code}=this.props;
-        console.log("country render")
         return(
             <div className={"Country "+colorMode+"-Country"}  onClick={onCountryClick.bind(this,alpha2Code,"out")}>
                 <img src={flag} alt={name}/>
