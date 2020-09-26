@@ -8,9 +8,9 @@ class Filter extends PureComponent{
             <div className={"FilterContainer"}>
                 <div className={"searchBar " +colorMode+"-searchBar"}>
                 <BiSearch className={"searchIcon "+colorMode+'-searchIcon'}/>
-                <input type="text" className="SearchField" placeholder="Search for a country" onChange={onInputChange}/>
+                <input aria-label="Search Box" type="text" className="SearchField" placeholder="Search for a country" onChange={onInputChange}/>
                 </div>
-                <select className={"selectRegion "+colorMode+"-selectRegion"} value={selectValue}  onChange={onChange}>
+                <select aria-label="Select Region" className={"selectRegion "+colorMode+"-selectRegion"} value={selectValue}  onChange={onChange}>
                         <option value="1">Filter by Region</option>
                         <option value="Africa">Africa</option>
                         <option value="Americas">Americas</option>
