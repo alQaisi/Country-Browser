@@ -23,7 +23,7 @@ const mapStateToProps=state=>{
 const mapDispatchToProps=(dispatch)=>{
   return {
     onInputChange:(event)=>dispatch(setSearchBox(event.target.value)),
-    darkModeEvent:()=>dispatch(darkModeEvent()),
+    darkModeEvent:(colorMode)=>dispatch(darkModeEvent(colorMode)),
     onChange:(event)=>dispatch(onChange(event.target.value)),
     onBackClick:()=>dispatch(onBackClick()),
     fetchCountries:()=>dispatch(fetchCountries()),
