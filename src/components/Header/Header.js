@@ -8,7 +8,7 @@ class Header extends PureComponent{
             <div className={"Header "+colorMode}>
                 <div className="headerContainer">
                     <p className="title">Where in the world?</p>
-                    <div className="buttonContainer" onClick={darkModeEvent}>
+                    <div className="buttonContainer" onClick={darkModeEvent.bind(this,colorMode)}>
                       {
                       colorMode==='dark'
                       ?<button aria-label="dark moode button" className="darkmode-button darkButton"><RiMoonFill/></button>

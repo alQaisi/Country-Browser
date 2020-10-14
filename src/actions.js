@@ -3,19 +3,19 @@ export const setSearchBox=(text)=>({
     type:actionsTypes.CHANGE_SEARCHBOX,
     payload:text
 });
-export const darkModeEvent=()=>{
-    switch(localStorage.getItem('theme')){
-        case 'light':
-            localStorage.setItem('theme','dark');
-            return{
-                type:actionsTypes.DARKMODE_EVENT,
-                payload:"dark"
-            };
-        default:
+export const darkModeEvent=(prevMode)=>{
+    switch(prevMode){
+        case 'dark':
             localStorage.setItem('theme','light');
             return{
                 type:actionsTypes.DARKMODE_EVENT,
                 payload:"light"
+            };
+        default:
+            localStorage.setItem('theme','dark');
+            return{
+                type:actionsTypes.DARKMODE_EVENT,
+                payload:"dark"
             }
     }
 }
