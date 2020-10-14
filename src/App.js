@@ -2,7 +2,7 @@ import React,{Component, Suspense} from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Filter from './components/Filter/Filter';
-// import CountriesContainer from './components/country/CountriesContainer';
+import ScrollArrow from './components/ScrollArrow/ScrollArrow';
 import {setSearchBox,darkModeEvent,onChange,onBackClick} from './actions';
 import {fetchCountries,onCountryClick} from './FetchActions';
 import {connect} from 'react-redux';
@@ -59,6 +59,7 @@ class App extends Component{
           )
         :null
         }
+        <ScrollArrow colorMode={colorMode}/>
       </div>
     );
   } 
