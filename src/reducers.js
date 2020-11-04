@@ -9,7 +9,8 @@ const dataState={
     currentCountry:{},
     borders:[],
     inPage:false,
-    slideMethod:''
+    slideMethod:'',
+    title:'Countries Browser'
 }
 export const uiReducer=(state=uiState,action={})=>{
     switch(action.type){
@@ -26,7 +27,7 @@ export const uiReducer=(state=uiState,action={})=>{
 export const dataReducer=(state=dataState,action={})=>{
     switch(action.type){
         case actionsTypes.CLICK_BACK:
-            return Object.assign({},state,{slideMethod:action.payload});
+            return Object.assign({},state,{slideMethod:action.payload,title:"Countries Browser"});
         case actionsTypes.FETCH_COUNTRIES:
             return Object.assign({},state,{data:action.payload});
         case actionsTypes.FETCH_BORDERS:

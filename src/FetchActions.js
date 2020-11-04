@@ -22,7 +22,7 @@ export const onCountryClick=(alpha2Code,position)=>(dispatch)=>{
         .then(data=>dispatch({type:actionsTypes.FETCH_BORDERS,payload:data})).catch(error=>dispatch({type:actionsTypes.FETCH_BORDERS,payload:[]}));
       dispatch(
           {type:actionsTypes.FETCH_COUNTRY,payload:{
-            currentCountry:APIdata,inPage:true,slideMethod:''
+            currentCountry:APIdata,inPage:true,slideMethod:'',title:APIdata.name
           }
         })}).catch(error=>dispatch({type:actionsTypes.FETCH_COUNTRY,payload:{}}));
 }

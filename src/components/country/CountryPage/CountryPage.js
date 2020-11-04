@@ -1,6 +1,8 @@
 import React from 'react';
 import './CountryPage.css'
 import {BsArrowLeft} from 'react-icons/bs';
+import {Helmet} from "react-helmet";
+
 const CountryPage=({slideMethod,onBackClick,colorMode,currentCountry,borders,onCountryClick})=>{
     let buttons=[<p key={-1}>Border Countries</p>];
     borders.forEach((border,index)=>{
@@ -13,6 +15,12 @@ const CountryPage=({slideMethod,onBackClick,colorMode,currentCountry,borders,onC
     }
     return(
         <div onMouseOver={controlScroll} onMouseOut={controlScroll.bind(this,true)} className={" CountryPage "+ colorMode+"-CountryPage "+ slideMethod}>
+
+            {/* <Helmet>
+                <meta charSet="utf-8" />
+                <title>{currentCountry.name}</title>
+            </Helmet> */}
+
             <div className={"button-container "+colorMode+"-button-container"} onClick={onBackClick}>
               <BsArrowLeft className="back-icon"/>
               <button className="back-button">Back</button>

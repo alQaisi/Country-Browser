@@ -1,5 +1,6 @@
 import React,{Component, Suspense} from 'react';
 import './App.css';
+import {Helmet} from "react-helmet";
 import Header from './components/Header/Header';
 import Filter from './components/Filter/Filter';
 import ScrollArrow from './components/ScrollArrow/ScrollArrow';
@@ -17,7 +18,8 @@ const mapStateToProps=state=>{
     data:state.dataReducer.data,
     currentCountry:state.dataReducer.currentCountry,
     inPage:state.dataReducer.inPage,
-    borders:state.dataReducer.borders
+    borders:state.dataReducer.borders,
+    title:state.dataReducer.title
   }
 }
 const mapDispatchToProps=(dispatch)=>{
@@ -35,7 +37,7 @@ class App extends Component{
     this.props.fetchCountries();
   }
   render(){
-    const {nameFilter,onInputChange,colorMode,darkModeEvent,selectValue,onChange,slideMethod,onBackClick,data,borders,inPage,currentCountry,onCountryClick}=this.props;
+    const {title,nameFilter,onInputChange,colorMode,darkModeEvent,selectValue,onChange,slideMethod,onBackClick,data,borders,inPage,currentCountry,onCountryClick}=this.props;
     let filterdCountries=data.filter(country=>{
       if(selectValue==="1"){
         return (country.name.toLowerCase().includes(nameFilter.toLowerCase()));
@@ -45,6 +47,10 @@ class App extends Component{
     })
     return (
       <div className={"App " +colorMode+"-App"}>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>{title}</title>
+        </Helmet>
         <Header colorMode={colorMode} darkModeEvent={darkModeEvent}/>
         <Filter colorMode={colorMode} onInputChange={onInputChange} selectValue={selectValue} onChange={onChange}/>
         <Suspense fallback={<h1>Loading Countries</h1>}>
