@@ -1,8 +1,6 @@
 import React from 'react';
 import './CountryPage.css'
 import {BsArrowLeft} from 'react-icons/bs';
-import {Helmet} from "react-helmet";
-
 const CountryPage=({slideMethod,onBackClick,colorMode,currentCountry,borders,onCountryClick})=>{
     let buttons=[<p key={-1}>Border Countries</p>];
     borders.forEach((border,index)=>{
