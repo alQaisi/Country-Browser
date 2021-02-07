@@ -1,6 +1,6 @@
 import React,{Component, Suspense} from 'react';
 import './App.css';
-import {Helmet} from "react-helmet";
+import Helmet from "react-helmet";
 import Header from './components/Header/Header';
 import Filter from './components/Filter/Filter';
 import ScrollArrow from './components/ScrollArrow/ScrollArrow';
