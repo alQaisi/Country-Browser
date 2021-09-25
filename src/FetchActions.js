@@ -1,6 +1,6 @@
 import actionsTypes from './constants';
 export const fetchCountries=()=>(dispatch)=>{
-    fetch("https://restcountries.eu/rest/v2/all")
+    fetch("https://restcountries.com/v3/all")
     .then(response=>response.json())
     .then(APIdata=>dispatch({
         type:actionsTypes.FETCH_COUNTRIES,
@@ -14,10 +14,10 @@ export const onCountryClick=(alpha2Code,position)=>(dispatch)=>{
             payload:{inPage:false,currentCountry:{}}
         });
     }
-    fetch(`https://restcountries.eu/rest/v2/alpha/${alpha2Code}`)
+    fetch(`https://restcountries.com/rest/v3/alpha/${alpha2Code}`)
     .then(response=>response.json())
     .then(APIdata=>{
-        const borders=APIdata.borders.map(border=>`https://restcountries.eu/rest/v2/alpha/${border}`)
+        const borders=APIdata.borders.map(border=>`https://restcountries.com/rest/v3/alpha/${border}`)
         Promise.all(borders.map(border=>fetch(border).then(response=>response.json())))
         .then(data=>dispatch({type:actionsTypes.FETCH_BORDERS,payload:data})).catch(error=>dispatch({type:actionsTypes.FETCH_BORDERS,payload:[]}));
       dispatch(
