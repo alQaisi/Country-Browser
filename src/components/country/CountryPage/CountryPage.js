@@ -5,7 +5,7 @@ const CountryPage=({slideMethod,onBackClick,colorMode,currentCountry,borders,onC
     let buttons=[<p key={-1}>Border Countries</p>];
     borders.forEach((border,index)=>{
         buttons.push(
-            <button key={index} onClick={onCountryClick.bind(this,border.alpha2Code,'in')} >{border.name}</button>
+            <button key={index} onClick={onCountryClick.bind(this,border[0].cca2,'in')} >{border[0].name.common}</button>
         )
     })
     const controlScroll=(show)=>{
@@ -25,22 +25,21 @@ const CountryPage=({slideMethod,onBackClick,colorMode,currentCountry,borders,onC
             </div>
             <div className="CountryCont">
                 <div className="flag">
-                  <img alt={currentCountry.name} src={currentCountry.flag}/>
+                  <img alt={currentCountry.name.common} src={currentCountry.flags[1]}/>
                 </div>
                 <div className="CountryInfo">
-                    <h1>{currentCountry.name}</h1>
+                    <h1>{currentCountry.name.common}</h1>
                     <div className="infoCont">
                         <div className="info1">
-                            <p>Native Name: <span>{currentCountry.nativeName}</span></p>
-                            <p>Population: <span>{currentCountry.population}</span></p>
+                            <p>Official Name: <span>{currentCountry.name.official}</span></p>
                             <p>Region: <span>{currentCountry.region}</span></p>
                             <p>Sub Region: <span>{currentCountry.subregion}</span></p>
                             <p>Capital: <span>{currentCountry.capital}</span></p>
                         </div>
                         <div className="info2">
-                            <p>Top Level Domain: <span>{currentCountry.topLevelDomain}</span></p>
-                            <p>Currencies: <span>{currentCountry.currencies.map(currency=>currency.name+",")}</span></p>
-                            <p>Languages: <span>{currentCountry.languages.map(language=>language.name+",")}</span></p>
+                            <p>Top Level Domain: <span>{currentCountry.tld[0]}</span></p>
+                            <p>Currencies: <span>{Object.values(currentCountry.currencies).map(currency=>currency.name+",")}</span></p>
+                            <p>Languages: <span>{Object.values(currentCountry.languages).map(language=>language+",")}</span></p>
                         </div>
                     </div>
                     <div className={"borderButton "+colorMode+"-borderButton"}>

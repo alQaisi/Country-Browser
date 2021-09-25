@@ -40,9 +40,9 @@ class App extends Component{
     const {title,nameFilter,onInputChange,colorMode,darkModeEvent,selectValue,onChange,slideMethod,onBackClick,data,borders,inPage,currentCountry,onCountryClick}=this.props;
     let filterdCountries=data.filter(country=>{
       if(selectValue==="1"){
-        return (country.name.toLowerCase().includes(nameFilter.toLowerCase()));
+        return (country.name.common.toLowerCase().includes(nameFilter.toLowerCase()));
       }else{
-        return (country.name.toLowerCase().includes(nameFilter.toLowerCase()) && country.region===selectValue);
+        return (country.name.common.toLowerCase().includes(nameFilter.toLowerCase()) && country.region===selectValue);
       }
     })
     return (
