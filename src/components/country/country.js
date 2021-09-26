@@ -6,7 +6,8 @@ class Country extends PureComponent{
         return(
             <div className={"Country "+colorMode+"-Country"}  onClick={onCountryClick.bind(this,alpha2Code,"out")}>
                 {/* <img src={flag} alt={name}/> */}
-                <img src={`https://restcountries.com/data/png/${cca3.toLowerCase()}.png`} alt={name}/>
+                {/* <img src={`https://restcountries.com/data/png/${cca3.toLowerCase()}.png`} alt={name}/> */}
+                <img src={`https://restcountries.com/data/${cca3.toLowerCase()}.svg`} alt={name}/>
                 <div className="infoContainer">
                   <p className="countryName">{name}</p>
                   <p className="countryInfo">{"Subregion:"+subregion}</p>
