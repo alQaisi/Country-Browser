@@ -44,9 +44,17 @@ const CountryPage=({slideMethod,onBackClick,colorMode,currentCountry,borders,onC
                                 (<p>Top Level Domain: <span>{currentCountry.tld[0]}</span></p>)
                                 :<></>
                             }
+                            {
+                                currentCountry.currencies!==undefined?
+                                (<p>Currencies: <span>{Object.values(currentCountry.currencies).map(currency=>currency.name+",")}</span></p>)
+                                :<></>
+                            }
+                            {
+                                currentCountry.languages!==undefined?
+                                (<p>Languages: <span>{Object.values(currentCountry.languages).map(language=>language+",")}</span></p>)
+                                :<></>
+                            }
                             
-                            <p>Currencies: <span>{Object.values(currentCountry.currencies).map(currency=>currency.name+",")}</span></p>
-                            <p>Languages: <span>{Object.values(currentCountry.languages).map(language=>language+",")}</span></p>
                         </div>
                     </div>
                     {
