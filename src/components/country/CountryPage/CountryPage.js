@@ -25,7 +25,8 @@ const CountryPage=({slideMethod,onBackClick,colorMode,currentCountry,borders,onC
             </div>
             <div className="CountryCont">
                 <div className="flag">
-                  <img alt={currentCountry.name.common} src={currentCountry.flags[1]}/>
+                  {/* <img alt={currentCountry.name.common} src={currentCountry.flags[1]}/> */}
+                  <img alt={currentCountry.name.common} src={`https://restcountries.com/data/png/${currentCountry.cca3.toLowerCase()}.png`}/>
                 </div>
                 <div className="CountryInfo">
                     <h1>{currentCountry.name.common}</h1>
@@ -37,14 +38,26 @@ const CountryPage=({slideMethod,onBackClick,colorMode,currentCountry,borders,onC
                             <p>Capital: <span>{currentCountry.capital}</span></p>
                         </div>
                         <div className="info2">
-                            <p>Top Level Domain: <span>{currentCountry.tld[0]}</span></p>
+                            {
+                                currentCountry.tld!==undefined?
+                                (<p>Top Level Domain: <span>{currentCountry.tld[0]}</span></p>)
+                                :<></>
+                            }
+                            
                             <p>Currencies: <span>{Object.values(currentCountry.currencies).map(currency=>currency.name+",")}</span></p>
                             <p>Languages: <span>{Object.values(currentCountry.languages).map(language=>language+",")}</span></p>
                         </div>
                     </div>
-                    <div className={"borderButton "+colorMode+"-borderButton"}>
+                    {
+                        buttons.length>1?
+                        (<div className={"borderButton "+colorMode+"-borderButton"}>
                         {buttons}
-                    </div>
+                        </div>)
+                        :<></>
+                    }
+                    {/* <div className={"borderButton "+colorMode+"-borderButton"}>
+                        {buttons}
+                    </div> */}
                 </div>
             </div>
         </div>
