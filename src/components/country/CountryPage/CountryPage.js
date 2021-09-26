@@ -25,8 +25,9 @@ const CountryPage=({slideMethod,onBackClick,colorMode,currentCountry,borders,onC
             </div>
             <div className="CountryCont">
                 <div className="flag">
-                  <img alt={currentCountry.name.common} src={currentCountry.flags[1]}/>
-                  {/* <img alt={currentCountry.name.common} src={`https://restcountries.com/data/png/${currentCountry.cca3.toLowerCase()}.png`}/> */}
+                  {/* <img alt={currentCountry.name.common} src={currentCountry.flags[1]}/> */}
+                  <img alt={currentCountry.name.common} src={`https://restcountries.com/data/png/${currentCountry.cca3.toLowerCase()}.png`}/>
+                  {/* <img alt={currentCountry.name.common} src={`https://restcountries.com/data/${currentCountry.cca3.toLowerCase()}.svg`}/> */}
                 </div>
                 <div className="CountryInfo">
                     <h1>{currentCountry.name.common}</h1>
