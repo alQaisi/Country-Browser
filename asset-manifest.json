@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/Country-Browser/static/css/main.31746cac.chunk.css",
-    "main.js": "/Country-Browser/static/js/main.ad6a9207.chunk.js",
-    "main.js.map": "/Country-Browser/static/js/main.ad6a9207.chunk.js.map",
-    "runtime-main.js": "/Country-Browser/static/js/runtime-main.be1819f2.js",
-    "runtime-main.js.map": "/Country-Browser/static/js/runtime-main.be1819f2.js.map",
+    "main.js": "/Country-Browser/static/js/main.eb564f9a.chunk.js",
+    "main.js.map": "/Country-Browser/static/js/main.eb564f9a.chunk.js.map",
+    "runtime-main.js": "/Country-Browser/static/js/runtime-main.213cb6a2.js",
+    "runtime-main.js.map": "/Country-Browser/static/js/runtime-main.213cb6a2.js.map",
     "static/js/2.fda40380.chunk.js": "/Country-Browser/static/js/2.fda40380.chunk.js",
     "static/js/2.fda40380.chunk.js.map": "/Country-Browser/static/js/2.fda40380.chunk.js.map",
     "static/css/3.cd01629a.chunk.css": "/Country-Browser/static/css/3.cd01629a.chunk.css",
-    "static/js/3.285e5183.chunk.js": "/Country-Browser/static/js/3.285e5183.chunk.js",
-    "static/js/3.285e5183.chunk.js.map": "/Country-Browser/static/js/3.285e5183.chunk.js.map",
+    "static/js/3.4133f7b4.chunk.js": "/Country-Browser/static/js/3.4133f7b4.chunk.js",
+    "static/js/3.4133f7b4.chunk.js.map": "/Country-Browser/static/js/3.4133f7b4.chunk.js.map",
     "static/css/4.56af98c5.chunk.css": "/Country-Browser/static/css/4.56af98c5.chunk.css",
-    "static/js/4.2f173819.chunk.js": "/Country-Browser/static/js/4.2f173819.chunk.js",
-    "static/js/4.2f173819.chunk.js.map": "/Country-Browser/static/js/4.2f173819.chunk.js.map",
+    "static/js/4.c7e82693.chunk.js": "/Country-Browser/static/js/4.c7e82693.chunk.js",
+    "static/js/4.c7e82693.chunk.js.map": "/Country-Browser/static/js/4.c7e82693.chunk.js.map",
     "static/js/5.844dd681.chunk.js": "/Country-Browser/static/js/5.844dd681.chunk.js",
     "static/js/5.844dd681.chunk.js.map": "/Country-Browser/static/js/5.844dd681.chunk.js.map",
     "index.html": "/Country-Browser/index.html",
@@ -22,9 +22,9 @@
     "static/js/2.fda40380.chunk.js.LICENSE.txt": "/Country-Browser/static/js/2.fda40380.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.be1819f2.js",
+    "static/js/runtime-main.213cb6a2.js",
     "static/js/2.fda40380.chunk.js",
     "static/css/main.31746cac.chunk.css",
-    "static/js/main.ad6a9207.chunk.js"
+    "static/js/main.eb564f9a.chunk.js"
   ]
 }
