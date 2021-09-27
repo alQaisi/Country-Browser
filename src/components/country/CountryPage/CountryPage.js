@@ -5,7 +5,7 @@ const CountryPage=({slideMethod,onBackClick,colorMode,currentCountry,borders,onC
     let buttons=[<p key={-1}>Border Countries</p>];
     borders.forEach((border,index)=>{
         buttons.push(
-            <button key={index} onClick={onCountryClick.bind(this,border[0].cca2,'in')} >{border[0].name.common}</button>
+            <button key={index} onClick={onCountryClick.bind(this,border.alpha2Code,'in')} >{border.name}</button>
         )
     })
     const controlScroll=(show)=>{
@@ -25,33 +25,28 @@ const CountryPage=({slideMethod,onBackClick,colorMode,currentCountry,borders,onC
             </div>
             <div className="CountryCont">
                 <div className="flag">
-                  {/* <img alt={currentCountry.name.common} src={currentCountry.flags[1]}/> */}
-                  <img alt={currentCountry.name.common} src={`https://restcountries.com/data/png/${currentCountry.cca3.toLowerCase()}.png`}/>
-                  {/* <img alt={currentCountry.name.common} src={`https://restcountries.com/data/${currentCountry.cca3.toLowerCase()}.svg`}/> */}
+                  <img alt={currentCountry.name} src={currentCountry.flags[1]}/>
                 </div>
                 <div className="CountryInfo">
-                    <h1>{currentCountry.name.common}</h1>
+                    <h1>{currentCountry.name}</h1>
                     <div className="infoCont">
                         <div className="info1">
-                            <p>Official Name: <span>{currentCountry.name.official}</span></p>
+                            <p>Native Name: <span>{currentCountry.nativeName}</span></p>
+                            <p>Population: <span>{currentCountry.population}</span></p>
+                            <p>Continent: <span>{currentCountry.continent}</span></p>
                             <p>Region: <span>{currentCountry.region}</span></p>
-                            <p>Sub Region: <span>{currentCountry.subregion}</span></p>
                             <p>Capital: <span>{currentCountry.capital}</span></p>
                         </div>
                         <div className="info2">
-                            {
-                                currentCountry.tld!==undefined?
-                                (<p>Top Level Domain: <span>{currentCountry.tld[0]}</span></p>)
-                                :<></>
-                            }
+                            <p>Top Level Domain: <span>{currentCountry.topLevelDomain}</span></p>
                             {
                                 currentCountry.currencies!==undefined?
-                                (<p>Currencies: <span>{Object.values(currentCountry.currencies).map(currency=>currency.name+",")}</span></p>)
+                                (<p>Currencies: <span>{currentCountry.currencies.map(currency=>currency.name+",")}</span></p>)
                                 :<></>
                             }
                             {
                                 currentCountry.languages!==undefined?
-                                (<p>Languages: <span>{Object.values(currentCountry.languages).map(language=>language+",")}</span></p>)
+                                (<p>Languages: <span>{currentCountry.languages.map(language=>language.name+",")}</span></p>)
                                 :<></>
                             }
                             
@@ -60,13 +55,10 @@ const CountryPage=({slideMethod,onBackClick,colorMode,currentCountry,borders,onC
                     {
                         buttons.length>1?
                         (<div className={"borderButton "+colorMode+"-borderButton"}>
-                        {buttons}
+                            {buttons}
                         </div>)
                         :<></>
                     }
-                    {/* <div className={"borderButton "+colorMode+"-borderButton"}>
-                        {buttons}
-                    </div> */}
                 </div>
             </div>
         </div>
