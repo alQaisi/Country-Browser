@@ -33,8 +33,8 @@ const CountryPage=({slideMethod,onBackClick,colorMode,currentCountry,borders,onC
                         <div className="info1">
                             <p>Native Name: <span>{currentCountry.nativeName}</span></p>
                             <p>Population: <span>{currentCountry.population}</span></p>
-                            <p>Continent: <span>{currentCountry.continent}</span></p>
                             <p>Region: <span>{currentCountry.region}</span></p>
+                            <p>Subregion: <span>{currentCountry.subregion}</span></p>
                             <p>Capital: <span>{currentCountry.capital}</span></p>
                         </div>
                         <div className="info2">
