@@ -42,7 +42,7 @@ class App extends Component{
       if(selectValue==="1"){
         return (country.name.toLowerCase().includes(nameFilter.toLowerCase()));
       }else{
-        return (country.name.toLowerCase().includes(nameFilter.toLowerCase()) && country.continent===selectValue);
+        return (country.name.toLowerCase().includes(nameFilter.toLowerCase()) && country.region===selectValue);
       }
     });
     return (
