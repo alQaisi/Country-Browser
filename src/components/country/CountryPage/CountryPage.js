@@ -25,7 +25,7 @@ const CountryPage=({slideMethod,onBackClick,colorMode,currentCountry,borders,onC
             </div>
             <div className="CountryCont">
                 <div className="flag">
-                  <img alt={currentCountry.name} src={currentCountry.flags[1]}/>
+                  <img alt={currentCountry.name} src={currentCountry.flag}/>
                 </div>
                 <div className="CountryInfo">
                     <h1>{currentCountry.name}</h1>
