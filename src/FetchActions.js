@@ -19,10 +19,9 @@ export const onCountryClick=(alpha2Code,position)=>(dispatch)=>{
     .then(response=>response.json())
     .then(APIdata=>{
       currentCountry=APIdata;
-      if(APIdata.borders.length>0)
-          var borders=APIdata.borders.map(border=>`https://restcountries.com/v2/alpha/${border.toLowerCase()}`);
-        Promise.all(borders.map(border=>fetch(border).then(response=>response.json())))
-        .then(data=>dispatch({type:actionsTypes.FETCH_BORDERS,payload:data})).catch(error=>dispatch({type:actionsTypes.FETCH_BORDERS,payload:[]}));
+      var borders=[...APIdata.borders.map(border=>`https://restcountries.com/v2/alpha/${border.toLowerCase()}`)];
+      Promise.all(borders.map(border=>fetch(border).then(response=>response.json())))
+      .then(data=>dispatch({type:actionsTypes.FETCH_BORDERS,payload:data})).catch(error=>dispatch({type:actionsTypes.FETCH_BORDERS,payload:[]}));
       dispatch(
           {type:actionsTypes.FETCH_COUNTRY,payload:{
             currentCountry:APIdata,inPage:true,slideMethod:'',title:APIdata.name

@@ -13,11 +13,12 @@
 }
 .Country img{
     object-fit:cover;
-    width:365px;
+    width:340px;
     height:auto;
     overflow: hidden;
     border-top-left-radius:8px;
     border-top-right-radius:8px;
+    border-bottom: 1px solid rgb(194, 194, 194);
 }
 .infoContainer p{
     margin-top:0px;
